@@ -1,106 +1,16 @@
-body {
-    font-family: roboto mono;
-    color:white;
-    background-color:rgb(40, 42, 52);
-    display:flex;
+@import url('./body.css');
+@import url('./header.css');
+@import url('./main.css');
+@import url('./asides.css');
+
+
+:root {
+    --darkUno:#191d31;
+    --darkDos:#13182e;
+    --darkBoton:#2b3149;
+    --darkTres:#b5bace;
+    --darkCuatro:#636363;;
+    --darkFondo:#282a34;
 }
 
 
-body .contenedorHeaderMain {
-    display:flex;
-    flex-direction:column;
-    flex-basis:75%;
-}
-/* ------------ HEADER ------------ */
-
-header {
-    /* los colores debo cambiarlos por los root del video que le pedi a Clau*/
-    color:white;
-    background-color:rgb(25, 29, 49);
-    display:flex;
-    flex-direction:column;
-    justify-content:space-around;
-    align-items:center;
-    padding-bottom:20px;
-}
-
-.contenedorBotones button {
-    padding:10px;
-    border:0;
-    border-radius:5px;
-    color:white;
-    background-color: rgb(43, 49, 73);
-}
-
-.contenedorBotones #botonModoOscuro {
-    display:none;
-}
-
-/* ---------MAIN----------- */
-
-main {
-    display:flex;
-    flex-direction:row;
-    height:450px;
-}
-
-
-body .panel {
-    flex-basis:25%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-/* -------- ASIDE IMAGEN ------------- */
-
-#panelImg {
-    height:900px;
-    background-color:rgb(28, 30, 40);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-
-#panelImg .campo {
-    margin:10px 0;
-}
-
-#panelImg #campoURL {
-    display:flex;
-    flex-direction:column;
-}
-
-#panelImg #campoFiltros {
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-
-#campoFiltros .filtro {
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    margin:10px;
-}
-
-#campoFiltros .filtro input {
-    appearance:none;
-    background:gray;
-}
-
-#campoFiltros button {
-    padding:10px;
-    margin:20px 0;
-    border:0;
-    border-radius:5px;
-    color:white;
-    background-color: rgb(43, 49, 73);
-}
-
-
-
-/* -------- ASIDE TEXTO ------------- */
-
-#panelTexto {
-    display:none;
-}

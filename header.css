@@ -1,0 +1,26 @@
+header {
+    width:100%;
+    color:white;
+    background-color:var(--darkUno);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+    padding-bottom:20px;
+    position:absolute;
+    z-index: 9;
+}
+
+/*---------- BOTONES -------------*/
+
+.contenedorBotones button {
+    padding:10px;
+    border:0;
+    border-radius:5px;
+    color:white;
+    background-color:var(--darkBoton);
+}
+
+.contenedorBotones #botonModoOscuro {
+    display:none;
+}

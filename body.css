@@ -1,0 +1,11 @@
+body {
+    font-family: roboto mono;
+    color:#f1f0f9;
+    background-color:var(--darkFondo);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+
+

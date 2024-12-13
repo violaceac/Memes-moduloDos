@@ -1,0 +1,216 @@
+body .panel {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-basis:25%;
+    position:absolute;
+    right:0;
+    top:0;
+    z-index: 10;
+}
+
+
+/* ================= ASIDE IMAGEN ================ */
+
+#panelImg {
+    height:950px;
+    width:25%;
+    background-color:var(--darkDos);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+
+#panelImg .campo {
+    width:90%;
+    margin:10px 0;
+}
+
+
+/* -------- CAMPO URL ----------*/
+
+#panelImg #campoURL {
+    display:flex;
+    flex-direction:column;
+}
+
+#campoURL input {
+    padding:10px;
+    background-color:rgb(43, 49, 73);
+    border: none;
+    border-radius:5px;
+    margin-top:10px;
+}
+
+
+/* ------ CAMPO FONDO ---------*/
+
+#campoFondo h3 {
+    margin:5px 0;
+}
+
+#campoFondo .colorFondo {
+    display:flex;
+    flex-direction:row;
+}
+
+.colorFondo input {
+    width:45%;
+    margin:5px;
+}
+
+#campoFondo select {
+    padding:5px;
+    margin:5px;
+    background:rgb(43, 49, 73);
+    border:none;
+    color:white;
+}
+
+
+
+/* ------ CAMPO FILTROS ---------*/
+
+
+#panelImg #campoFiltros {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+#campoFiltros h3 {
+    align-self:flex-start;
+}
+
+#campoFiltros .filtro {
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    margin:10px;
+}
+
+#campoFiltros .filtro input {
+    appearance:none;
+    background:var(--darkCuatro);
+    height:5px;
+    margin-top:10px;
+}
+
+#campoFiltros .filtro input::-webkit-slider-thumb {
+    appearance:none;
+    background:var(--darkTres);
+    width:15px;
+    height:15px;
+    border-radius:10px;
+}
+
+#campoFiltros button {
+    padding:10px;
+    margin:20px 0;
+    border:0;
+    border-radius:5px;
+    color:white;
+    background-color: VAR(--darkBoton);
+}
+
+
+
+
+
+
+/* ================= ASIDE TEXTO =================== */
+
+#panelTexto {
+    height:800px;
+    background-color:var(--darkDos);
+    display:none;
+    flex-direction:column;
+
+}
+
+#panelTexto .campo {
+    width:90%;
+    margin:10px 0;
+}
+
+/* ----------- INPUTS INFERIOR Y SUPERIOR --------- */
+
+.campo .contenedorInput {
+    display:flex;
+    flex-direction:column;
+}
+
+/* ---------- FUENTES ------------- */
+
+#panelTexto #campoFuente {
+    display:flex;
+    flex-direction:column;
+}
+
+#campoFuente .botonesYTamaño {
+    margin:10px 0;
+    display:flex;
+    justify-content:space-between;
+}
+
+#campoFuente .botonesYTamaño input {
+    width:50%;
+    height:20px;
+    border:0;
+    background-color: VAR(--darkBoton);
+    padding:6px 0;
+}
+
+#botonesAlineacion button {
+    height:30px;
+    width:30px;
+    border:0;
+    border-radius:5px;
+    color:white;
+    background-color: VAR(--darkBoton);
+}
+
+
+/* ---------- COLOR Y FONDO ----------- */
+
+#campoColores #colorYFondo {
+    width:100%;
+    display:flex;
+    flex-direction:row;
+}
+
+#campoColor, #campoFondo {
+    width:50%;
+    margin:0 10px;
+    display:flex;
+    flex-direction:column;
+}
+
+#campoColor input, #campoFondo input {
+    width:100%;
+}
+
+#campoColor label, #campoFondo label {
+    margin:5px 0;
+}
+
+#campoColores .contenedorCheckTransparente {
+    margin:10px 0;
+}
+
+/* ----------- CONTORNO ------------- */
+
+#campoContorno button {
+    margin:10px 0;
+    font-size:15px;
+}
+
+/* ---------- ESPACIADO ------------ */
+
+#campoEspaciado, #campoInterlineado {
+    display:flex;
+    flex-direction:column;
+}
+
+
