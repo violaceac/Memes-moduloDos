@@ -42,10 +42,10 @@
             <h2 class="texto" id="textoTop">hola</h2>
             <img src="" alt="" class="imagen" id="imagen">
             <h2 class="texto" id="textoBottom">chau</h2>
-            <div class="contenedorBotones">
-                <button>Descargar meme</button>
-                <button>Reestablecer todo</button>
-            </div>
+        </div>
+        <div class="contenedorBotones">
+            <button id="botonDescarga">Descargar meme</button>
+            <button id="botonReestablecer">Reestablecer todo</button>
         </div>
     </main>
     <aside class="panel" id="panelImg">
@@ -56,13 +56,13 @@
         </div>
         <div id="campoFondo" class="campo">
             <h3>FONDO</h3>
-            <div class="colorFondo">
-                <input type="color">
+            <div class="contenedorColorFondo">
+                <input type="color" id="colorFondo">
                 <select>
                     <option id="opcionNinguno">Ninguno</option>
                     <option id="opcionAclarar">Aclarar</option>
                     <option id="opcionObscurecer">Obscurecer</option>
-                    <option id="opcionObscurecer">Diferencia</option>
+                    <option id="opcionDiferencia">Diferencia</option>
                     <option id="opcionLuminosidad">Luminosidad</option>
                     <option id="opcionMultiplicar">Multiplicar</option>
                 </select>
@@ -74,59 +74,59 @@
                 <!-- BRILLO -->
             <div class="filtro">
                 <label>BRILLO</label>
-                <input type="range">
+                <input type="range" id="filtroBrillo">
             </div>
 
                 <!-- OPACIDAD -->
              <div class="filtro">
                 <label>OPACIDAD</label>
-                <input type="range">
+                <input type="range" id="filtroOpacidad">
              </div>
 
                 <!-- CONTRASTE -->
             <div class="filtro">
                 <label>CONTRASTE</label>
-                <input type="range">
+                <input type="range" id="filtroContraste">
             </div>            
 
                 <!-- DESENFOQUE -->
             <div class="filtro">
                 <label>DESENFOQUE</label>
-                <input type="range">    
+                <input type="range" id="filtroDesenfoque">    
             </div>
 
                 <!-- ESCALA DE GRISES -->
             <div class="filtro">
                 <label>ESCALA DE GRISES</label>
-                <input type="range">    
+                <input type="range" id="filtroGrises">    
             </div>
 
                 <!-- SEPIA -->
             <div class="filtro">
                 <label>SEPIA</label>
-                <input type="range">
+                <input type="range" id="filtroSepia">
             </div>                    
             
                 <!-- HUE -->
             <div class="filtro">
                 <label>HUE</label>
-            <input type="range">
+            <input type="range" id="filtroHue">
             </div>
             
 
                 <!-- SATURADO -->
             <div class="filtro">
                 <label>SATURADO</label>
-                <input type="range">
+                <input type="range" id="filtroSaturado">
             </div>
 
                 <!-- NEGATIVO -->
             <div class="filtro">
                 <label>NEGATIVO</label>
-                <input type="range">
+                <input type="range" id="filtroNegativo">
             </div>
             
-            <button>Reestablecer filtros</button>
+            <button id="resetFiltros">Reestablecer filtros</button>
         </div>
     </aside>
     <aside class="panel" id="panelTexto">
@@ -134,31 +134,31 @@
         <div class="campo" id="campoTextoSup">
             <div class="contenedorInput">
                 <label>Superior</label>
-                <input type="text">
+                <input type="text" id="textoSuperior">
             </div>
             <div class="contenedorCheckbox">
-                <input type="checkbox">
+                <input type="checkbox" id="sinTextoSup">
                 <span>Sin texto superior</span> 
             </div>
         </div>
         <div class="campo" id="campoTextoInf">
             <div class="contenedorInput">
                 <label>Inferior</label>
-                <input type="text">
+                <input type="text" id="textoInferior">
             </div>
             <div class="contenedorCheckbox">
-                <input type="checkbox">
+                <input type="checkbox" id="sinTextoInf">
                 <span>Sin texto inferior</span>
             </div>
         </div>
         <div class="campo" id="campoFuente">
             <label>FUENTE</label>
             <select id="inputFuentes">
-                <option value="">fuente1</option>
-                <option value="">fuente2</option>
-                <option value="">fuente3</option>
-                <option value="">fuente4</option>
-                <option value="">fuente5</option>
+                <option value="" id="fuenteImpact">Impact</option>
+                <option value="" id="fuenteTimes">Times New Roman</option>
+                <option value="" id="fuenteArial">Arial</option>
+                <option value="" id="fuenteCambria">Cambria</option>
+                <option value="" id="fuenteRoboto">Roboto Mono</option>
             </select>
         <div class="botonesYTamaño">
             <!-- --------- INPUT TAMAÑO DE FUENTE ------------ -->
@@ -175,11 +175,11 @@
             <div id="colorYFondo">
                 <div id="campoColor">
                     <label>COLOR</label>
-                    <input type="color">
+                    <input type="color" id="colorFuente">
                 </div>
                 <div id="campoFondo">
                     <label>FONDO</label>
-                    <input type="color">
+                    <input type="color" id="fondoFuente">
                 </div>
             </div>
             <div class="contenedorCheckTransparente">
@@ -190,24 +190,24 @@
         <div class="campo" id="campoContorno">
             <label>CONTORNO</label>
             <div class="contenedorBotones">
-                <button>Ninguno</button>
-                <button>Claro</button>
-                <button>Oscuro</button>
+                <button id="ninguno">Ninguno</button>
+                <button id="claro">Claro</button>
+                <button id="oscuro">Oscuro</button>
             </div>
         </div>
         <div class="campo" id="campoEspaciado">
             <label>ESPACIADO</label>
-            <input type="number">
+            <input type="number" id="espaciadoFuente">
         </div>
         <div class="campo" id="campoInterlineado">
-            <label for="">INTERLINEADO</label>
+            <label>INTERLINEADO</label>
             <select id="inputInterlineado">
-                <option value="">0.8</option>
-                <option value="">1</option>
-                <option value="">1.2</option>
-                <option value="">1.5</option>
-                <option value="">2</option>
-                <option value="">2.5</option>
+                <option value="" id="ceroOcho">0.8</option>
+                <option value="" id="uno">1</option>
+                <option value="" id="unoDos">1.2</option>
+                <option value="" id="unoCinco">1.5</option>
+                <option value="" id="dos">2</option>
+                <option value="" id="dosCinco">2.5</option>
             </select>
         </div>
     </aside>

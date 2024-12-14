@@ -50,12 +50,12 @@ body .panel {
     margin:5px 0;
 }
 
-#campoFondo .colorFondo {
+#campoFondo .contenedorColorFondo {
     display:flex;
     flex-direction:row;
 }
 
-.colorFondo input {
+.contenedorColorFondo input {
     width:45%;
     margin:5px;
 }
