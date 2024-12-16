@@ -13,6 +13,12 @@ header {
 
 /*---------- BOTONES -------------*/
 
+header .contenedorBotones {
+    width:380px;
+    display:flex;
+    justify-content:space-around;
+}
+
 .contenedorBotones button {
     padding:10px;
     border:0;

@@ -60,7 +60,7 @@ const $rangeHue = $("#filtroHue");
 const $rangeSaturado = $("#filtroSaturado");
 const $rangeNegativo = $("#filtroNegativo");
 // BOTON REESTABLECER FILTROS
-const $buttonReset = $("#resetFiltros");
+const $buttonResetFiltros = $("#resetFiltros");
 
 
 
@@ -75,14 +75,12 @@ const $inputTextoSup = $("#textoSuperior");
 const $checkSinTextoSup = $("#sinTextoSup");
 // TEXTO INFERIOR
 const $inputTextoInf = $("#textoInferior");
-const $checkSinTextoInf = $("#sinTextoinf");
+const $checkSinTextoInf = $("#sinTextoInf");
 
 // FUENTE
-const $selectImpact = $("#fuenteImpact");
-const $selectTimes = $("#fuenteTimes");
-const $selectArial = $("#fuenteArial");
-const $selectCambria =("#fuenteCambria");
-const $selectRoboto = $("#fuenteRoboto");
+
+// --- TIPO DE FUENTE
+const $selectFuente = $("#inputFuentes");
 // --- TAMAÑO DE FUENTE
 const $inputTamañoFuente = $("#inputTamaño");
 // --- ALINEACION DE FUENTE
@@ -115,19 +113,147 @@ const $selectDosCinco =$("#dosCinco");
 // ================ FIN DE ELEMENTOS HTML ===============
 
 
-// ===============================================
 
 
+
+// ============== FUNCIONES ========================
+
+
+// ==== HEADER ====
+
+//  DESPLEGAR PANEL IMAGEN/TEXTO
 $buttonTexto.addEventListener("click", () => {
     $asideTexto.style.display = "flex";
     $asideImagen.style.display = "none"
 })
 
+$buttonImagen.addEventListener("click", () => {
+    $asideImagen.style.display = "flex";
+    $asideTexto.style.display = "none"
+})
+
+// BOTON CLARO/OSCURO
+$modoOscuro.addEventListener("click", () => {
+    $modoClaro.style.display = "flex";
+    $modoOscuro.style.display = "none"
+})
+
+$modoClaro.addEventListener("click", () => {
+    $modoOscuro.style.display = "flex";
+    $modoClaro.style.display = "none"
+})
+
+// ---------------------------------------
+
+// ==== ASIDES ====
 
 
-// //  BOTONES PARA DESPLEGAR PANEL IMAGEN/TEXTO
-// const $buttonImagen = $("#botonImagen");
-// const $buttonTexto = $("#botonTexto"); 
+// ====== ASIDE IMAGEN ======
+
+//INPUT URL
+$inputURL.addEventListener("input", () => {
+    $imagenMeme.src = $inputURL.value
+})
+
+// FILTROS-------- cada vez que modifico un rango se deshace el anterior
+$rangeBrillo.addEventListener("input", () => {
+    $imagenMeme.style.filter = `brightness(${$rangeBrillo.value})`
+})
+$rangeOpacidad.addEventListener("input", () => {
+    $imagenMeme.style.filter = `opacity(${$rangeOpacidad.value})`
+})
+$rangeContraste.addEventListener("input", () => {
+    $imagenMeme.style.filter = `contrast(${$rangeContraste.value})`
+})
+$rangeDesenfoque.addEventListener("input", () => {
+    $imagenMeme.style.filter = `blur(${$rangeDesenfoque.value})`
+})
+$rangeGrises.addEventListener("input", () => {
+    $imagenMeme.style.filter = `grayscale(${$rangeGrises.value})`
+})
+$rangeSepia.addEventListener("input", () => {
+    $imagenMeme.style.filter = `sepia(${$rangeSepia.value})`
+})
+$rangeHue.addEventListener("input", () => {
+    $imagenMeme.style.filter = `hue-rotation(${$rangeHue.value})`
+})
+$rangeSaturado.addEventListener("input", () => {
+    $imagenMeme.style.filter = `saturation(${$rangeSaturado.value})`
+})
+$rangeNegativo.addEventListener("input", () => {
+    $imagenMeme.style.filter = `invert(${$rangeNegativo.value})`
+})
+//---------------
+//cada vez que modifico alguno de los rangos de este panel se deshace lo anterior---------
+
+// una funcion que agrupe todos los rangos y que se ejecute cada vez que cambio alguno, entonces cuando mueve uno tiene que leer como estan todos
+
+// function cambioRango () {
+//     $imagenMeme.style.filter = `brightness(${$rangeBrillo.value})`;
+//     $imagenMeme.style.filter = `opacity(${$rangeOpacidad.value})`;
+//     $imagenMeme.style.filter = `contrast(${$rangeContraste.value})`;
+//     $imagenMeme.style.filter = `blur(${$rangeDesenfoque.value})`;
+//     $imagenMeme.style.filter = `grayscale(${$rangeGrises.value})`;
+//     $imagenMeme.style.filter = `sepia(${$rangeSepia.value})`;
+//     $imagenMeme.style.filter = `hue-rotation(${$rangeHue.value})`;
+//     $imagenMeme.style.filter = `saturation(${$rangeSaturado.value})`;
+//     $imagenMeme.style.filter = `invert(${$rangeNegativo.value})`;
+// }
+
+// ------FIN DE FILTROS----------------
+
+
+
+
+
+// ====== FUNCIONES PANEL TEXTO ======
+
+// INPUT TEXTO SUPERIOR E INFERIOR
+$inputTextoSup.addEventListener("input", () => {
+    $h2Top.innerText = `${$inputTextoSup.value}`
+})
+
+$inputTextoInf.addEventListener("input", () => {
+    $h2Bottom.innerText = `${$inputTextoInf.value}`
+})
+// CHECKBOX SIN TEXTO SUPERIOR E INFERIOR
+$checkSinTextoSup.addEventListener("change", () => {
+    if($checkSinTextoSup.checked) {
+        $h2Top.style.display = "none";
+    } else {
+        $h2Top.style.display = "flex";
+    }
+})
+
+$checkSinTextoInf.addEventListener("change", () => {
+    if($checkSinTextoInf.checked) {
+        $h2Bottom.style.display = "none";
+    } else {
+        $h2Bottom.style.display = "flex";
+    }
+})
+
+// FUENTES
+// hacer una funcion para aplicar todas las fuentes, pero primero como cambio la fuente?
+// function cambiarFuente() {
+//     $h2Top.style.fontFamily = $fuente.value
+// }
+
+$selectFuente.addEventListener("change", () => {
+    $h2Top.style.fontFamily = $selectFuente.value
+})
+
+// $inputTamañoFuente.addEventListener ("input", () => {
+//     $h2Top.style.fontSize = `${$inputTamañoFuente.value}`
+// })
+
+
+// // --- TAMAÑO DE FUENTE
+// const $inputTamañoFuente = $("#inputTamaño");
+// // --- ALINEACION DE FUENTE
+// const $buttonIzquierda = $("#izquierda");
+// const $buttonCentro = $("#centro");
+// const $buttonDerecha = $("#derecha");
 
 
 
@@ -135,12 +261,34 @@ $buttonTexto.addEventListener("click", () => {
 
 
 
-    //INPUT URL
-    $inputURL.addEventListener("input", () => {
-        $imagenMeme.src = $inputURL.value
-    })
+
+
+
+
+
+
+
+
 
 }
+
+
+
+
+// function reestablecerValores() {
+//     $inputTxt.value = ""
+//   }
+  
+//   $buttonCreate.addEventListener("click", () => {
+//     if($inputTxt.value !== "") {
+//       $liList.innerHTML += `<li>${$inputTxt.value}</li>`
+//     }
+    
+//     reestablecerValores()
+//   })
+
+
+
 
 
 

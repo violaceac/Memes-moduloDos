@@ -38,7 +38,7 @@
         </div>
     </header>
     <main>
-        <div class="contenedorMeme">
+        <div class="contenedorMeme"> <!-- dividir esto en tres divs para poder cambiar colores de fondo e interlineado en los textos y la imagen, cada elemento va contenido en un div, todos del ancho del contenedor de meme -->
             <h2 class="texto" id="textoTop">hola</h2>
             <img src="" alt="" class="imagen" id="imagen">
             <h2 class="texto" id="textoBottom">chau</h2>
@@ -74,56 +74,56 @@
                 <!-- BRILLO -->
             <div class="filtro">
                 <label>BRILLO</label>
-                <input type="range" id="filtroBrillo">
+                <input type="range" id="filtroBrillo" min="0" max="1" step="0.1" value="1">
             </div>
 
                 <!-- OPACIDAD -->
              <div class="filtro">
                 <label>OPACIDAD</label>
-                <input type="range" id="filtroOpacidad">
+                <input type="range" id="filtroOpacidad" min="0" max="1" step="0.1" value="1">
              </div>
 
                 <!-- CONTRASTE -->
             <div class="filtro">
                 <label>CONTRASTE</label>
-                <input type="range" id="filtroContraste">
+                <input type="range" id="filtroContraste" min="100%" max="1000$" step="1%" value="100%">
             </div>            
 
                 <!-- DESENFOQUE -->
             <div class="filtro">
                 <label>DESENFOQUE</label>
-                <input type="range" id="filtroDesenfoque">    
+                <input type="range" id="filtroDesenfoque" min="0px" max="10px" step="0.1px" value="0px">    
             </div>
 
                 <!-- ESCALA DE GRISES -->
             <div class="filtro">
                 <label>ESCALA DE GRISES</label>
-                <input type="range" id="filtroGrises">    
+                <input type="range" id="filtroGrises" min="0%" max="100%" step="1%" value="0%">    
             </div>
 
                 <!-- SEPIA -->
             <div class="filtro">
                 <label>SEPIA</label>
-                <input type="range" id="filtroSepia">
+                <input type="range" id="filtroSepia" min="0%" max="100%" step="1%" value="0%">
             </div>                    
             
                 <!-- HUE -->
             <div class="filtro">
                 <label>HUE</label>
-            <input type="range" id="filtroHue">
+            <input type="range" id="filtroHue" min="0deg" max="359deg" step="1deg" value="0deg">
             </div>
             
 
                 <!-- SATURADO -->
             <div class="filtro">
                 <label>SATURADO</label>
-                <input type="range" id="filtroSaturado">
+                <input type="range" id="filtroSaturado" min="100%" max="1000%" step="10%" value="100%">
             </div>
 
                 <!-- NEGATIVO -->
             <div class="filtro">
                 <label>NEGATIVO</label>
-                <input type="range" id="filtroNegativo">
+                <input type="range" id="filtroNegativo" min="0" max="1" step="0.1" value="1" >
             </div>
             
             <button id="resetFiltros">Reestablecer filtros</button>
@@ -137,7 +137,7 @@
                 <input type="text" id="textoSuperior">
             </div>
             <div class="contenedorCheckbox">
-                <input type="checkbox" id="sinTextoSup">
+                <input type="checkbox" class="checkbox" id="sinTextoSup">
                 <span>Sin texto superior</span> 
             </div>
         </div>
@@ -147,20 +147,20 @@
                 <input type="text" id="textoInferior">
             </div>
             <div class="contenedorCheckbox">
-                <input type="checkbox" id="sinTextoInf">
+                <input type="checkbox" class="checkbox" id="sinTextoInf">
                 <span>Sin texto inferior</span>
             </div>
         </div>
         <div class="campo" id="campoFuente">
             <label>FUENTE</label>
             <select id="inputFuentes">
-                <option value="" id="fuenteImpact">Impact</option>
-                <option value="" id="fuenteTimes">Times New Roman</option>
-                <option value="" id="fuenteArial">Arial</option>
-                <option value="" id="fuenteCambria">Cambria</option>
-                <option value="" id="fuenteRoboto">Roboto Mono</option>
+                <option value="Impact" id="fuenteImpact">Impact</option>
+                <option value="Times New Roman" id="fuenteTimes">Times New Roman</option>
+                <option value="arial" id="fuenteArial">Arial</option>
+                <option value="cambria" id="fuenteCambria">Cambria</option>
+                <option value="roboto mono" id="fuenteRoboto">Roboto Mono</option>
             </select>
-        <div class="botonesYTamaño">
+            <div class="botonesYTamaño">
             <!-- --------- INPUT TAMAÑO DE FUENTE ------------ -->
             <input type="number" id="inputTamaño">
             <!-- -------------BOTONES DE ALINEACION----------- -->
@@ -169,7 +169,7 @@
                 <button id="centro"><i class="fi fi-rr-align-center"></i></button>
                 <button id="derecha"><i class="fi fi-rr-symbol"></i></button>
              </div>
-        </div>
+            </div>
         </div>
         <div class="campo" id="campoColores">
             <div id="colorYFondo">
@@ -183,7 +183,7 @@
                 </div>
             </div>
             <div class="contenedorCheckTransparente">
-                <input type="checkbox" id="checkTransparente">
+                <input type="checkbox" class="checkbox" id="checkTransparente">
                 <label>Fondo transparente</label>
             </div>
         </div>

@@ -10,6 +10,7 @@ body .panel {
 }
 
 
+
 /* ================= ASIDE IMAGEN ================ */
 
 #panelImg {
@@ -122,16 +123,22 @@ body .panel {
 /* ================= ASIDE TEXTO =================== */
 
 #panelTexto {
-    height:800px;
+    height:950px;
+    width:25%;
     background-color:var(--darkDos);
     display:none;
     flex-direction:column;
-
+    align-items:center;
 }
+
 
 #panelTexto .campo {
     width:90%;
     margin:10px 0;
+}
+
+.panel .checkbox {
+    margin:10px;
 }
 
 /* ----------- INPUTS INFERIOR Y SUPERIOR --------- */
@@ -141,11 +148,29 @@ body .panel {
     flex-direction:column;
 }
 
+.contenedorInput input {
+    padding:10px;
+    background-color:rgb(43, 49, 73);
+    color:white;
+    border: none;
+    border-radius:5px;
+    margin-top:10px;
+}
+
 /* ---------- FUENTES ------------- */
 
 #panelTexto #campoFuente {
     display:flex;
     flex-direction:column;
+}
+
+#campoFuente select {
+    padding:10px;
+    background-color:rgb(43, 49, 73);
+    color:white;
+    border: none;
+    border-radius:5px;
+    margin-top:10px;
 }
 
 #campoFuente .botonesYTamaño {
@@ -164,7 +189,7 @@ body .panel {
 
 #botonesAlineacion button {
     height:30px;
-    width:30px;
+    width:40px;
     border:0;
     border-radius:5px;
     color:white;
@@ -195,9 +220,6 @@ body .panel {
     margin:5px 0;
 }
 
-#campoColores .contenedorCheckTransparente {
-    margin:10px 0;
-}
 
 /* ----------- CONTORNO ------------- */
 
@@ -213,4 +235,20 @@ body .panel {
     flex-direction:column;
 }
 
+#campoEspaciado input {
+    padding:10px;
+    background-color:rgb(43, 49, 73);
+    color:white;
+    border: none;
+    border-radius:5px;
+    margin-top:10px;
+}
 
+#campoInterlineado select {
+    padding:10px;
+    background-color:rgb(43, 49, 73);
+    color:white;
+    border: none;
+    border-radius:5px;
+    margin-top:10px;
+}
