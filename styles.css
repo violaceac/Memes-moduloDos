@@ -4,7 +4,6 @@
 @import url('./asides.css');
 
 
-
 .modo-oscuro {
     --colorFuente:#f1f0f9;
     --colorFondo:#282a34;
@@ -26,3 +25,29 @@
     --colorRango1:#b3b1c2;
     --colorRango2:#7d7f86;
 }
+
+
+
+/* .modo-oscuro {
+    --colorFuente:#EAE2FF;
+    --colorFondo:#2B1843;
+    --fondoHeader:#1A0E29;
+    --colorBoton:#44316b;
+    --fondoAside:#251539;
+    --fondoInput:#44316b;
+    --colorRango1:#170d24;
+    --colorRango2:#5e409b;
+}
+
+.modo-claro {
+    --colorFuente:#2B1843;
+    --colorFondo:#e8ddfd;
+    --fondoHeader:#deceff;
+    --colorBoton:#cbb4f7;
+    --fondoAside:#e8ddfc;
+    --fondoInput:#cbb4f7;
+    --colorRango1:#9680c0;;
+    --colorRango2:#9164ec;
+} */
+
+
