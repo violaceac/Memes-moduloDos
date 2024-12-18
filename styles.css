@@ -4,13 +4,25 @@
 @import url('./asides.css');
 
 
-:root {
-    --darkUno:#191d31;
-    --darkDos:#13182e;
-    --darkBoton:#2b3149;
-    --darkTres:#b5bace;
-    --darkCuatro:#636363;;
-    --darkFondo:#282a34;
+
+.modo-oscuro {
+    --colorFuente:#f1f0f9;
+    --colorFondo:#282a34;
+    --fondoHeader:#191d31;
+    --colorBoton:#2b3149;
+    --fondoAside:#13182e;
+    --fondoInput:#2b3149;
+    --colorRango1:#636363;
+    --colorRango2:#b5bace;
 }
 
-
+.modo-claro {
+    --colorFuente:#5e5e5e;
+    --colorFondo:#e4e4e4;
+    --fondoHeader:#e9e9e9;
+    --colorBoton:#c3c3c3;
+    --fondoAside:#edeffb;
+    --fondoInput:#cbcbcb;
+    --colorRango1:#b3b1c2;
+    --colorRango2:#7d7f86;
+}

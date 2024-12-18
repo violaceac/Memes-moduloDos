@@ -1,7 +1,7 @@
 header {
     width:100%;
-    color:white;
-    background-color:var(--darkUno);
+    color:var(--colorFuente);
+    background-color:var(--fondoHeader);
     display:flex;
     flex-direction:column;
     justify-content:space-around;
@@ -23,8 +23,8 @@ header .contenedorBotones {
     padding:10px;
     border:0;
     border-radius:5px;
-    color:white;
-    background-color:var(--darkBoton);
+    color:var(--colorFuente);
+    background-color:var(--colorBoton);
 }
 
 .contenedorBotones #botonModoOscuro {

@@ -7,6 +7,7 @@ body .panel {
     right:0;
     top:0;
     z-index: 10;
+    /* overflow-y: auto;  para dar desplazamiento vertical independiente pero no funciona, ya probe colocandoo tambien en el elemento padre de los asides*/ 
 }
 
 
@@ -16,7 +17,7 @@ body .panel {
 #panelImg {
     height:950px;
     width:25%;
-    background-color:var(--darkDos);
+    background-color:var(--fondoAside);
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -38,7 +39,8 @@ body .panel {
 
 #campoURL input {
     padding:10px;
-    background-color:rgb(43, 49, 73);
+    background-color:var(--fondoInput);
+    color:var(--colorFuente);
     border: none;
     border-radius:5px;
     margin-top:10px;
@@ -64,9 +66,9 @@ body .panel {
 #campoFondo select {
     padding:5px;
     margin:5px;
-    background:rgb(43, 49, 73);
+    background:var(--fondoInput);
     border:none;
-    color:white;
+    color: var(--colorFuente);
 }
 
 
@@ -93,14 +95,14 @@ body .panel {
 
 #campoFiltros .filtro input {
     appearance:none;
-    background:var(--darkCuatro);
+    background:var(--colorRango1);
     height:5px;
     margin-top:10px;
 }
 
 #campoFiltros .filtro input::-webkit-slider-thumb {
     appearance:none;
-    background:var(--darkTres);
+    background:var(--colorRango2);
     width:15px;
     height:15px;
     border-radius:10px;
@@ -111,8 +113,8 @@ body .panel {
     margin:20px 0;
     border:0;
     border-radius:5px;
-    color:white;
-    background-color: VAR(--darkBoton);
+    color:var(--colorFuente);
+    background-color: var(--colorBoton);
 }
 
 
@@ -125,7 +127,7 @@ body .panel {
 #panelTexto {
     height:950px;
     width:25%;
-    background-color:var(--darkDos);
+    background-color:var(--fondoAside);
     display:none;
     flex-direction:column;
     align-items:center;
@@ -150,8 +152,8 @@ body .panel {
 
 .contenedorInput input {
     padding:10px;
-    background-color:rgb(43, 49, 73);
-    color:white;
+    background-color:var(--fondoInput);
+    color:var(--colorFuente);
     border: none;
     border-radius:5px;
     margin-top:10px;
@@ -166,8 +168,8 @@ body .panel {
 
 #campoFuente select {
     padding:10px;
-    background-color:rgb(43, 49, 73);
-    color:white;
+    background-color:var(--fondoInput);
+    color:var(--colorFuente);
     border: none;
     border-radius:5px;
     margin-top:10px;
@@ -183,7 +185,7 @@ body .panel {
     width:50%;
     height:20px;
     border:0;
-    background-color: VAR(--darkBoton);
+    background-color:var(--fondoInput);
     padding:6px 0;
 }
 
@@ -192,8 +194,8 @@ body .panel {
     width:40px;
     border:0;
     border-radius:5px;
-    color:white;
-    background-color: VAR(--darkBoton);
+    color:var(--colorFuente);
+    background-color: var(--colorBoton);
 }
 
 
@@ -237,8 +239,8 @@ body .panel {
 
 #campoEspaciado input {
     padding:10px;
-    background-color:rgb(43, 49, 73);
-    color:white;
+    background-color:var(--fondoInput);
+    color:var(--colorFuente);
     border: none;
     border-radius:5px;
     margin-top:10px;
@@ -246,8 +248,8 @@ body .panel {
 
 #campoInterlineado select {
     padding:10px;
-    background-color:rgb(43, 49, 73);
-    color:white;
+    background-color:var(--fondoInput);
+    color:var(--colorFuente);
     border: none;
     border-radius:5px;
     margin-top:10px;

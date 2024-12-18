@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+    integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+    integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+    crossorigin="anonymous"></script>
+
     <title>Document</title>
 
 <!-- Debajo links de normalize y estilos -->   
@@ -23,31 +30,34 @@
 
 </head>
 
-<body>
+<body class="modo-oscuro" id="body">
     <header>
         <h1 class="titulo">Generador de Memes</h1>
         <div class="contenedorBotones">
-            <!--boton imagen-->
+            <!--BOTON PANEL IMAGEN-->
             <button class="boton" id="botonImagen"><i class="fi fi-rr-picture"></i> Imagen </button>
-            <!--boton texto-->
+            <!--BOTON PANEL TEXTO-->
             <button class="boton" id="botonTexto"><i class="fi fi-rr-text"></i> Texto </button>
-            <!--boton modoOscuro-->
+            <!--BOTON MODO OSCURO-->
             <button class="boton" id="botonModoOscuro"><i class="fi fi-ss-moon"></i> Modo oscuro </button>
-            <!--boton modoClaro-->
+            <!--BOTON MODO CLARO-->
             <button class="boton" id="botonModoClaro"><i class="fi fi-tr-brightness"></i> Modo claro </button>
         </div>
     </header>
     <main>
-        <div class="contenedorMeme"> <!-- dividir esto en tres divs para poder cambiar colores de fondo e interlineado en los textos y la imagen, cada elemento va contenido en un div, todos del ancho del contenedor de meme -->
+        <!-- CONTENEDOR MEME -->
+        <div class="contenedor-meme" id="contendor-meme">
+            <!-- TEXTO SUPERIOR -->
             <h2 class="texto" id="textoTop">hola</h2>
-            <img src="" alt="" class="imagen" id="imagen">
+            <!-- IMAGEN MEME -->
+            <div class="contenedor-imagen" id="contenedor-imagen"> </div>
+            <!-- TEXTO INFERIOR -->
             <h2 class="texto" id="textoBottom">chau</h2>
         </div>
-        <div class="contenedorBotones">
-            <button id="botonDescarga">Descargar meme</button>
-            <button id="botonReestablecer">Reestablecer todo</button>
-        </div>
+        <button id="botonDescarga">Descargar meme</button>
     </main>
+
+    <!-- ---------------- ASIDE IMAGEN ------------------- -->
     <aside class="panel" id="panelImg">
         <h2>IMAGEN</h2>
         <div id="campoURL" class="campo">
@@ -58,13 +68,13 @@
             <h3>FONDO</h3>
             <div class="contenedorColorFondo">
                 <input type="color" id="colorFondo">
-                <select>
-                    <option id="opcionNinguno">Ninguno</option>
-                    <option id="opcionAclarar">Aclarar</option>
-                    <option id="opcionObscurecer">Obscurecer</option>
-                    <option id="opcionDiferencia">Diferencia</option>
-                    <option id="opcionLuminosidad">Luminosidad</option>
-                    <option id="opcionMultiplicar">Multiplicar</option>
+                <select id="select-mezcla">
+                    <option value="normal">Ninguno</option>
+                    <option value="lighten">Aclarar</option>
+                    <option value="darken">Obscurecer</option>
+                    <option value="difference">Diferencia</option>
+                    <option value="luminosity">Luminosidad</option>
+                    <option value="multiply">Multiplicar</option>
                 </select>
             </div>
         </div>
@@ -129,6 +139,8 @@
             <button id="resetFiltros">Reestablecer filtros</button>
         </div>
     </aside>
+    
+    <!-- ---------------- ASIDE TEXTO ------------------- -->
     <aside class="panel" id="panelTexto">
         <h2 id="titulo">TEXTO</h2>
         <div class="campo" id="campoTextoSup">
@@ -154,7 +166,7 @@
         <div class="campo" id="campoFuente">
             <label>FUENTE</label>
             <select id="inputFuentes">
-                <option value="Impact" id="fuenteImpact">Impact</option>
+                <option value="Impact" id="fuenteImpact" checked>Impact</option>
                 <option value="Times New Roman" id="fuenteTimes">Times New Roman</option>
                 <option value="arial" id="fuenteArial">Arial</option>
                 <option value="cambria" id="fuenteCambria">Cambria</option>
@@ -162,7 +174,7 @@
             </select>
             <div class="botonesYTamaño">
             <!-- --------- INPUT TAMAÑO DE FUENTE ------------ -->
-            <input type="number" id="inputTamaño">
+            <input type="number" min="1" max="100" id="inputTamaño">
             <!-- -------------BOTONES DE ALINEACION----------- -->
             <div id="botonesAlineacion">
                 <button id="izquierda"><i class="fi fi-rr-align-left"></i></button>
@@ -197,17 +209,17 @@
         </div>
         <div class="campo" id="campoEspaciado">
             <label>ESPACIADO</label>
-            <input type="number" id="espaciadoFuente">
+            <input type="number" min="1" max="100" id="espaciadoFuente">
         </div>
         <div class="campo" id="campoInterlineado">
             <label>INTERLINEADO</label>
             <select id="inputInterlineado">
-                <option value="" id="ceroOcho">0.8</option>
-                <option value="" id="uno">1</option>
-                <option value="" id="unoDos">1.2</option>
-                <option value="" id="unoCinco">1.5</option>
-                <option value="" id="dos">2</option>
-                <option value="" id="dosCinco">2.5</option>
+                <option value="0.8">0.8</option>
+                <option value="1">1</option>
+                <option value="1.2">1.2</option>
+                <option value="1.5">1.5</option>
+                <option value="2">2</option>
+                <option value="2.5">2.5</option>
             </select>
         </div>
     </aside>

@@ -1,7 +1,7 @@
 body {
     font-family: roboto mono;
-    color:#f1f0f9;
-    background-color:var(--darkFondo);
+    color:var(--colorFuente);
+    background-color:var(--colorFondo);
     display:flex;
     flex-direction:column;
     align-items:center;

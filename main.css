@@ -9,7 +9,7 @@ main {
     position:absolute;
 }
 
-main .contenedorMeme {
+main .contenedor-meme {
     width:500px;
     height:500px;
     background-color:white;
@@ -19,20 +19,35 @@ main .contenedorMeme {
     justify-content:center;
     position:relative;
     top:0;
+
 }
 
-.contenedorMeme h2 {
+.contenedor-meme h2 {
+    width:500px;
+    text-align:center;
     font-size:50px;
+    font-family:impact;
     color:black;
-    margin:30px 0;
+    margin:0;
+    padding:20px 0;
+    background-color:transparent;
+    flex-grow:1;
 }
 
-
-.contenedorMeme img {
+.contenedor-meme .contenedor-imagen {
+    width:100%;
     height:300px;
-    width:300px;
+    background-position:center;
+    background-size:cover;
+    flex-grow:2;
+    background-color:black;
 }
 
-main .contenedorBotones {
-    margin:30px;
+main button {
+    padding:20px;
+    margin:20px 0;
+    border:0;
+    border-radius:5px;
+    color:var(--colorFuente);
+    background-color: var(--colorBoton);
 }
