@@ -159,48 +159,42 @@ $inputColorFondo.addEventListener("input", () => {
 $selectMezcla.addEventListener("change", () => {
     $imagenMeme.style.backgroundBlendMode = $selectMezcla.value
 })
-
-
-// FILTROS NO SE COMPORTA COMO ES ESPERADO, PROBANDO FUNCIONES O ACUMULAR LOS VALORES EN OTRA VARIABLE PARA QUE NO SE REPITAN(?)
-
-// FILTROS *ya no se sobreescriben, pero ahora no refresca su propio valor, si le bajo el brillo luego no sube
+//FILTROS
 $rangeBrillo.addEventListener("input", () => {
-    let aux = $imagenMeme.style.filter
-    $imagenMeme.style.filter = `${aux} brightness(${$rangeBrillo.value}) `;
-})
+    aplicarFiltros();
+});
 $rangeOpacidad.addEventListener("input", () => {
-    let aux = $imagenMeme.style.filter
-    $imagenMeme.style.filter = `${aux} opacity(${$rangeOpacidad.value}) `
+    aplicarFiltros()
 })
 $rangeContraste.addEventListener("input", () => {
-    let aux = $imagenMeme.style.filter
-    $imagenMeme.style.filter = `${aux} contrast(${$rangeContraste.value}%) `
+    aplicarFiltros()
 })
 $rangeDesenfoque.addEventListener("input", () => {
-    let aux = $imagenMeme.style.filter
-    $imagenMeme.style.filter = `${aux} blur(${$rangeDesenfoque.value}px) `
+    aplicarFiltros()
 })
 $rangeGrises.addEventListener("input", () => {
-    let aux = $imagenMeme.style.filter
-    $imagenMeme.style.filter = `${aux} grayscale(${$rangeGrises.value}%) `
+    aplicarFiltros()
 })
 $rangeSepia.addEventListener("input", () => {
-    let aux = $imagenMeme.style.filter
-    $imagenMeme.style.filter = `${aux} sepia(${$rangeSepia.value}%) `
+    aplicarFiltros()
 })
 $rangeHue.addEventListener("input", () => {
-    let aux = $imagenMeme.style.filter
-    $imagenMeme.style.filter = `${aux} hue-rotate(${$rangeHue.value}deg) `
+    aplicarFiltros()
 })
 $rangeSaturado.addEventListener("input", () => {
-    let aux = $imagenMeme.style.filter
-    $imagenMeme.style.filter = `${aux} saturate(${$rangeSaturado.value}%) `
+    aplicarFiltros()
 })
 $rangeNegativo.addEventListener("input", () => {
-    let aux = $imagenMeme.style.filter
-    $imagenMeme.style.filter = `${aux} invert(${$rangeNegativo.value}) `
+    aplicarFiltros()
+})
+//botón resetear filtros
+$buttonResetFiltros.addEventListener("click", () => {
+    resetFiltros()
 })
 
+// == FUNCIONES ==
+
+//aplicar filtros
 function aplicarFiltros() {
     $imagenMeme.style.filter = `
         brightness(${$rangeBrillo.value})
@@ -214,19 +208,22 @@ function aplicarFiltros() {
         invert(${$rangeNegativo.value})
     `;
 }
-
-$buttonResetFiltros.addEventListener("click", () => {
+// resetear filtros
+function resetFiltros() {
     $rangeBrillo.value = "1" 
     $rangeOpacidad.value = "1"
-    $rangeContraste.value = "100%"
-    $rangeDesenfoque.value = "0px"
-    $rangeGrises.value = "0%" 
-    $rangeSepia.value = "0%"
-    $rangeHue.value = "0deg"
-    $rangeSaturado.value = "100%"
-    $rangeNegativo.value = "1"
+    $rangeContraste.value = "100"
+    $rangeDesenfoque.value = "0"
+    $rangeGrises.value = "0" 
+    $rangeSepia.value = "0"
+    $rangeHue.value = "0"
+    $rangeSaturado.value = "100"
+    $rangeNegativo.value = "0"
     aplicarFiltros()
-})
+}
+
+resetFiltros();
+
 
 // ------FIN DE FILTROS-----
 
@@ -347,28 +344,4 @@ $selectInterlineado.addEventListener("change", () => {
 
 
 
-// function reestablecerValores() {
-//     $inputTxt.value = ""
-//   }
-  
-//   $buttonCreate.addEventListener("click", () => {
-//     if($inputTxt.value !== "") {
-//       $liList.innerHTML += `<li>${$inputTxt.value}</li>`
-//     }
-    
-//     reestablecerValores()
-//   })
-
-
-
-
-
-
-// //DOBLE CONTROL SOBRE LOS INPUT DEL TIPO NUMBER
-
-// $inputEdad.AddEventListener("input", () => {
-//     if(Number($inputEdad.value)) {
-//         $h1Title.innerText = $inputEdad.value
-//     }
-// })
 

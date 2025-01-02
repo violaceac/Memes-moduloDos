@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<!-- debajo scripts para boton de descarga -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
     integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
     crossorigin="anonymous"></script>
@@ -46,7 +46,7 @@
     </header>
     <main>
         <!-- CONTENEDOR MEME -->
-        <div class="contenedor-meme" id="contendor-meme">
+        <div class="contenedor-meme" id="contenedor-meme">
             <!-- TEXTO SUPERIOR -->
             <h2 class="texto" id="textoTop">TOP TEXT</h2>
             <!-- IMAGEN MEME -->
@@ -54,20 +54,25 @@
             <!-- TEXTO INFERIOR -->
             <h2 class="texto" id="textoBottom">BOTTOM TEXT</h2>
         </div>
+        <!-- BOTON DESCARGA -->
         <button id="botonDescarga">Descargar meme</button>
     </main>
 
-    <!-- ---------------- ASIDE IMAGEN ------------------- -->
+    <!-- ================= ASIDE IMAGEN ================= -->
     <aside class="panel" id="panelImg">
         <h2>IMAGEN</h2>
+        <!-- URL -->
         <div id="campoURL" class="campo">
             <label for="">URL</label>
             <input type="text" id="URL">
         </div>
+        <!-- FONDO -->
         <div id="campoFondo" class="campo">
             <h3>FONDO</h3>
             <div class="contenedorColorFondo">
+                <!-- COLOR FONDO -->
                 <input type="color" id="colorFondo">
+                <!-- MEZCLA FONDO -->
                 <select id="select-mezcla">
                     <option value="normal">Ninguno</option>
                     <option value="lighten">Aclarar</option>
@@ -78,93 +83,100 @@
                 </select>
             </div>
         </div>
+        <!-- FILTROS -->
         <div id="campoFiltros" class="campo">
             <h3>FILTROS</h3>
 
                 <!-- BRILLO -->
             <div class="filtro">
                 <label>BRILLO</label>
-                <input type="range" id="filtroBrillo" min="0" max="1" step="0.1" value="1">
+                <input type="range" id="filtroBrillo" min="0" max="1" step="0.1">
             </div>
 
                 <!-- OPACIDAD -->
              <div class="filtro">
                 <label>OPACIDAD</label>
-                <input type="range" id="filtroOpacidad" min="0" max="1" step="0.1" value="1">
+                <input type="range" id="filtroOpacidad" min="0" max="1" step="0.1">
              </div>
 
                 <!-- CONTRASTE -->
             <div class="filtro">
                 <label>CONTRASTE</label>
-                <input type="range" id="filtroContraste" min="100%" max="1000$" step="1%" value="100%">
+                <input type="range" id="filtroContraste" min="100" max="1000" step="1">
             </div>            
 
                 <!-- DESENFOQUE -->
             <div class="filtro">
                 <label>DESENFOQUE</label>
-                <input type="range" id="filtroDesenfoque" min="0px" max="10px" step="0.1px" value="0px">    
+                <input type="range" id="filtroDesenfoque" min="0" max="10" step="0.1">    
             </div>
 
                 <!-- ESCALA DE GRISES -->
             <div class="filtro">
                 <label>ESCALA DE GRISES</label>
-                <input type="range" id="filtroGrises" min="0%" max="100%" step="1%" value="0%">    
+                <input type="range" id="filtroGrises" min="0" max="100" step="1">    
             </div>
 
                 <!-- SEPIA -->
             <div class="filtro">
                 <label>SEPIA</label>
-                <input type="range" id="filtroSepia" min="0%" max="100%" step="1%" value="0%">
+                <input type="range" id="filtroSepia" min="0" max="100" step="1">
             </div>                    
             
                 <!-- HUE -->
             <div class="filtro">
                 <label>HUE</label>
-            <input type="range" id="filtroHue" min="0deg" max="359deg" step="1deg" value="0deg">
+            <input type="range" id="filtroHue" min="0" max="359" step="1">
             </div>
             
-
                 <!-- SATURADO -->
             <div class="filtro">
                 <label>SATURADO</label>
-                <input type="range" id="filtroSaturado" min="100%" max="1000%" step="10%" value="100%">
+                <input type="range" id="filtroSaturado" min="100" max="1000" step="10">
             </div>
 
                 <!-- NEGATIVO -->
             <div class="filtro">
                 <label>NEGATIVO</label>
-                <input type="range" id="filtroNegativo" min="0" max="1" step="0.1" value="1" >
+                <input type="range" id="filtroNegativo" min="0" max="1" step="0.1">
             </div>
             
+            <!-- BOTON RESET FILTROS -->
             <button id="resetFiltros">Reestablecer filtros</button>
         </div>
     </aside>
     
-    <!-- ---------------- ASIDE TEXTO ------------------- -->
+    <!-- ================= ASIDE TEXTO ================= -->
     <aside class="panel" id="panelTexto">
         <h2 id="titulo">TEXTO</h2>
+        <!-- INPUT TEXTO SUPERIOR -->
         <div class="campo" id="campoTextoSup">
             <div class="contenedorInput">
                 <label>Superior</label>
-                <input type="text" id="textoSuperior">
+                <input type="text" placeholder="TOP TEXT" id="textoSuperior">
             </div>
+            <!-- CHECK SIN TEXTO SUPERIOR -->
             <div class="contenedorCheckbox">
                 <input type="checkbox" class="checkbox" id="sinTextoSup">
                 <span>Sin texto superior</span> 
             </div>
         </div>
+        <!-- INPUT TEXTO INFERIOR -->
         <div class="campo" id="campoTextoInf">
             <div class="contenedorInput">
                 <label>Inferior</label>
-                <input type="text" id="textoInferior">
+                <input type="text" placeholder="BOTTOM TEXT" id="textoInferior">
             </div>
+            <!-- CHECK SIN TEXTO INFERIOR -->
             <div class="contenedorCheckbox">
                 <input type="checkbox" class="checkbox" id="sinTextoInf">
                 <span>Sin texto inferior</span>
             </div>
         </div>
+        <!-- FUENTES -->
         <div class="campo" id="campoFuente">
             <label>FUENTE</label>
+            <!-- INPUT TIPO DE FUENTE -->
             <select id="inputFuentes">
                 <option value="Impact" id="fuenteImpact" checked>Impact</option>
                 <option value="Times New Roman" id="fuenteTimes">Times New Roman</option>
@@ -174,31 +186,35 @@
             </select>
             <div class="botonesYTamaño">
             <!-- --------- INPUT TAMAÑO DE FUENTE ------------ -->
-            <input type="number" min="1" max="100" id="inputTamaño">
+            <input type="number" min="1" max="100" value="50" id="inputTamaño">
             <!-- -------------BOTONES DE ALINEACION----------- -->
             <div id="botonesAlineacion">
                 <button id="izquierda"><i class="fi fi-rr-align-left"></i></button>
                 <button id="centro"><i class="fi fi-rr-align-center"></i></button>
                 <button id="derecha"><i class="fi fi-rr-symbol"></i></button>
-             </div>
             </div>
         </div>
+        <!-- ------------- COLORES ----------- -->
         <div class="campo" id="campoColores">
             <div id="colorYFondo">
+                <!-- COLOR -->
                 <div id="campoColor">
                     <label>COLOR</label>
                     <input type="color" id="colorFuente">
                 </div>
+                <!-- FONDO -->
                 <div id="campoFondo">
                     <label>FONDO</label>
                     <input type="color" id="fondoFuente">
                 </div>
             </div>
+            <!-- CHECK FONDO TRANSPARENTE -->
             <div class="contenedorCheckTransparente">
                 <input type="checkbox" class="checkbox" id="checkTransparente">
                 <label>Fondo transparente</label>
             </div>
         </div>
+<!-- ------------- CONTORNO ----------- -->
         <div class="campo" id="campoContorno">
             <label>CONTORNO</label>
             <div class="contenedorBotones">
@@ -207,10 +223,12 @@
                 <button id="oscuro">Oscuro</button>
             </div>
         </div>
+<!-- ------------- ESPACIADO ----------- -->
         <div class="campo" id="campoEspaciado">
             <label>ESPACIADO</label>
-            <input type="number" min="1" max="100" id="espaciadoFuente">
+            <input type="number" min="1" max="100" value="20" id="espaciadoFuente">
         </div>
+<!-- ------------- INTERLINEADO ----------- -->
         <div class="campo" id="campoInterlineado">
             <label>INTERLINEADO</label>
             <select id="inputInterlineado">

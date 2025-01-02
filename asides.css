@@ -185,8 +185,9 @@ body .panel {
     width:50%;
     height:20px;
     border:0;
+    color:var(--colorFuente);
     background-color:var(--fondoInput);
-    padding:6px 0;
+    padding:6px;
 }
 
 #botonesAlineacion button {
